@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<a
+		th:fragment="button(link, title)"
+		th:href="@{${link}}"
+		th:text="${title}"
+		class="btn btn-primary"
+	>
+	<div th:fragment="nav" class="container mt-3">
+		<div class="border border-black  d-flex ">
+			<h1 class=" p-3">Best of [[${name}]]</h1>
+			<div class="p-3 border-start border-black">
+				<a class="btn btn-outline-secondary" th:href="@{/}">Home</a>
+				<a class="btn btn-outline-secondary" th:href="@{/movie}">Movies</a>
+				<a class="btn btn-outline-secondary" th:href="@{/song}">Song</a>
+			</div>
+		</div>
+		
+	</div>
+
+</body>
+</html>

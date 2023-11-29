@@ -12,11 +12,14 @@ import java.util.List;
 
 @Controller
 public class MainController {
+	
+	  private String getName() {
+	        return "Denis";
+	    }
 
     @GetMapping("/")
     public String getTitle(Model model) {
-        final String name = "denis";
-        model.addAttribute("name", name);
+        model.addAttribute("name", getName());
         return "Title";
     }
 
@@ -40,6 +43,7 @@ public class MainController {
     public String getMovies(Model model) {
         List<Movie> movies = getBestMovies();
         model.addAttribute("movies", movies);
+        model.addAttribute("name", getName());
         return "movie";
     }
 
@@ -47,6 +51,7 @@ public class MainController {
     public String getSongs(Model model) {
         List<Song> songs = getBestSongs();
         model.addAttribute("songs", songs);
+        model.addAttribute("name", getName());
         return "Song";
     }
 
